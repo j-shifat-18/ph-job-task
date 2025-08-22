@@ -72,7 +72,7 @@ const Navbar = () => {
             <span className="hidden sm:inline">{session.user.name}</span>
             <button
               onClick={() => signOut({ callbackUrl: "/" })}
-              className="btn btn-outline btn-sm"
+              className="btn btn-outline bg-red-500 shadow-none  btn-sm"
             >
               Sign Out
             </button>
@@ -80,7 +80,7 @@ const Navbar = () => {
         ) : (
           <button
             onClick={() => signIn("google", { callbackUrl: "/" })}
-            className="btn btn-primary btn-sm"
+            className="btn bg-red-500 hover:bg-red-600 border-none shadow-none text-white btn-sm"
           >
             Sign In
           </button>
