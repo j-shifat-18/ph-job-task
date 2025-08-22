@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import DreamCarsLogo from "./DreamCarsLogo";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const { data: session, status } = useSession();
+  const router = useRouter();
 
   const links = (
     <>
@@ -72,15 +74,16 @@ const Navbar = () => {
             <span className="hidden sm:inline">{session.user.name}</span>
             <button
               onClick={() => signOut({ callbackUrl: "/" })}
-              className="btn btn-outline bg-red-500 shadow-none  btn-sm"
+              className="btn btn-outline bg-red-500 shadow-none btn-sm"
             >
               Sign Out
             </button>
           </div>
         ) : (
+          // Redirect to /signin page
           <button
-            onClick={() => signIn("google", { callbackUrl: "/" })}
-            className="btn bg-red-500 hover:bg-red-600 border-none shadow-none text-white btn-sm"
+            onClick={() => router.push("/signin")}
+            className="btn bg-red-500 hover:bg-red-600 border-none shadow-none text-white "
           >
             Sign In
           </button>
