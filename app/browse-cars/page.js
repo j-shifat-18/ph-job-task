@@ -2,7 +2,7 @@ import CarCard from "../Components/CarCard";
 
 const Pets = async () => {
 
-  const data = await fetch('http://localhost:5000/cars')
+  const data = await fetch('https://ph-job-task-server-three.vercel.app/cars')
   const cars = await data.json()
 
     return (

@@ -24,7 +24,7 @@ export default function AddCarForm() {
     setLoading(true);
     setSuccess("");
 
-    const res = await fetch("http://localhost:5000/cars", {
+    const res = await fetch("https://ph-job-task-server-three.vercel.app/cars", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),

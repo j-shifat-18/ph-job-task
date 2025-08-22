@@ -14,7 +14,7 @@ export default function CarDetailsPage() {
   useEffect(() => {
     async function fetchCar() {
       try {
-        const res = await fetch(`http://localhost:5000/cars/${id}`);
+        const res = await fetch(`https://ph-job-task-server-three.vercel.app/cars/${id}`);
         const data = await res.json();
         setCar(data);
       } catch (err) {

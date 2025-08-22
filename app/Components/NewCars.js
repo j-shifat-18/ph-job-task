@@ -2,7 +2,7 @@ import React from 'react';
 import NewCarCard from './NewCarCard';
 
 const NewCars =  async() => {
-    const data = await fetch("http://localhost:5000/new-cars");
+    const data = await fetch("https://ph-job-task-server-three.vercel.app/new-cars");
     const cars = await data.json();
     return (
         <div className='my-24 max-w-7xl mx-auto'>
